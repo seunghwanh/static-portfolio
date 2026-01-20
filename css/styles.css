@@ -29,7 +29,7 @@ ul {
 }
 
 /* ========================= COMMON ELEMENTS ========================= */
-.container {
+.content-wrapper {
   margin: 0 auto;
   width: min(var(--max-width), calc(100% - 40px));
 }

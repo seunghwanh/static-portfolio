@@ -125,3 +125,26 @@ ul {
   border-radius: 24px;
   padding: 8px;
 }
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 1);
+  display: inline-block;
+}
+.demo {
+  border: 1px solid #000000;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.demo-header {
+  padding: 10px 16px;
+}
+.demo-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.demo p {
+  margin: 0;
+  padding: 10px 16px;
+}

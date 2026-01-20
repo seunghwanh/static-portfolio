@@ -6,10 +6,7 @@
   --bg-color: #fafbff;
   --text-color: #0f172a;
   --border-color: rgba(15, 23, 42, 0.12);
-
-  /* Buttons */
-  --btn-border: 1px solid #000000;
-  --btn-border-radius: 16px;
+  --muted-color: #475569;
 }
 
 /* Universal styles */
@@ -31,15 +28,29 @@ body {
     "Apple Color Emoji",
     "Segoe UI Emoji";
   color: var(--text-color);
+  line-height: 1.55;
   background:
     radial-gradient(1200px 600px at 15% 0%, rgba(91, 140, 255, 0.18), transparent 55%),
     radial-gradient(900px 520px at 85% 20%, rgba(122, 165, 255, 0.12), transparent 60%), var(--bg-color);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+h1 {
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: -0.02em;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
 section {
   margin-top: 150px;
 }
@@ -76,7 +87,12 @@ ul {
   background: transparent;
 }
 .btn.primary {
-  background: #bbbbbb;
+  border-color: rgba(91, 140, 255, 0.45);
+  background: linear-gradient(180deg, rgba(91, 140, 255, 0.2), rgba(91, 140, 255, 0.08));
+}
+.btn.primary:hover {
+  border-color: rgba(91, 140, 255, 0.7);
+  background: linear-gradient(180deg, rgba(91, 140, 255, 0.28), rgba(91, 140, 255, 0.1));
 }
 
 /* Tags */
@@ -171,24 +187,30 @@ ul {
 
 /* ========================= HERO SECTION ========================= */
 .hero {
-  margin-top: 20px;
-}
-.hero p {
-  margin-top: 0;
+  margin-top: 40px;
 }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: start;
-  gap: 16px;
-}
-.hero-grid ul {
-  padding-top: 12px;
+  gap: 18px;
 }
 .hero-options {
   list-style: none;
   display: flex;
   gap: 12px;
+}
+.hero-summary {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  color: var(--muted-color);
+}
+.hero-description {
+  font-size: 16px;
+  color: var(--muted-color);
+  max-width: 95%;
 }
 
 /* Metrics */
@@ -200,19 +222,18 @@ ul {
   gap: 16px;
 }
 .metric {
-  border: 1px solid #000000;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 20px;
-  height: 100%;
+  padding: 10px 12px;
 }
 .metric-header {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .metric-details {
-  color: gray;
-  font-size: 14px;
+  font-size: 12px;
+  color: var(--muted-color);
 }
 
 /* Media */

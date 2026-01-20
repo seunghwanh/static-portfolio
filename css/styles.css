@@ -21,6 +21,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
+section {
+  margin-top: 40px;
+}
+ul {
+  padding: 0;
+}
 
 /* Common elements */
 .container {
@@ -34,6 +40,9 @@ a {
   border-radius: var(--btn-border-radius);
   padding: 10px;
   font-size: 16px;
+}
+.btn.primary {
+  background: #bbbbbb;
 }
 
 /* Header */
@@ -58,4 +67,40 @@ a {
 }
 .fullname {
   font-weight: bold;
+}
+
+/* Hero */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: start;
+  gap: 16px;
+}
+.profile .options {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+.hero-content ul {
+  padding-top: 12px;
+}
+/* Metrics */
+.metrics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.metric {
+  border: 1px solid #000000;
+  border-radius: 16px;
+  padding: 20px;
+}
+.metric-header {
+  font-weight: bold;
+  font-size: 20px;
+}
+.metric-details {
+  color: gray;
+  font-size: 14px;
 }

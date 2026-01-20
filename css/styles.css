@@ -219,6 +219,9 @@ ul {
   grid-template-columns: 2fr 1fr;
   align-items: stretch;
 }
+.card-body ul.experience-list {
+  padding-left: 0;
+}
 .experience {
   display: grid;
   grid-template-columns: 1fr 3fr;

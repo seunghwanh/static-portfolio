@@ -115,6 +115,57 @@
           </article>
         </div>
       </section>
+
+      <!-- Projects -->
+      <section id="projects" class="projects">
+        <div class="container">
+          <div class="projects-header">
+            <h2>Selected Projects</h2>
+            <p>A few projects that show how I design, implement, and ship.</p>
+          </div>
+
+          <div class="search-container">
+            <div>
+              <label for="project-search">Search projects</label>
+              <input id="project-search" type="text" placeholder="e.g. dashboard, performance, a11y" />
+            </div>
+
+            <div>
+              <label for="tag-filter">Tag</label>
+              <select id="tag-filter">
+                <option value="all">All</option>
+                <option value="frontend">FrontEnd</option>
+                <option value="performance">Performance</option>
+                <option value="accessibility">Accessibility</option>
+                <option value="data">Data</option>
+              </select>
+            </div>
+            <button class="btn">Clear</button>
+          </div>
+
+          <div class="card-container">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="PulseBoard Analytics" />
+              <div class="card-body">
+                <h3>PulseBoard Analytics</h3>
+                <p>A responsive analytics dashboard with a focus on speed, clarity, and keyboard-first navigation.</p>
+                <ul>
+                  <li>Reduced LCP by 38% via code-splitting and image strategy</li>
+                  <li>Designed reusable UI components with predictable state</li>
+                  <li>Built accessible charts with descriptive summaries</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="tag">Frontend</span>
+                <span class="tag">Performance</span>
+                <button class="btn">Ask for a walkthrough</button>
+              </div>
+            </div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

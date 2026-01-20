@@ -28,12 +28,11 @@ ul {
   padding: 0;
 }
 
-/* Common elements */
+/* ========================= COMMON ELEMENTS ========================= */
 .container {
   margin: 0 auto;
   width: min(var(--max-width), calc(100% - 40px));
 }
-
 .btn {
   background: #ffffff;
   border: var(--btn-border);
@@ -67,6 +66,33 @@ ul {
 }
 .fullname {
   font-weight: bold;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding-bottom: 12px;
+}
+.card img {
+  width: 100%;
+  height: 200px;
+}
+.card-body {
+  padding: 0 16px;
+}
+.card-footer {
+  display: flex;
+  gap: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
+  align-items: center;
+  font-size: 12px;
 }
 
 /* ========================= HERO SECTION ========================= */
@@ -147,4 +173,20 @@ ul {
 .demo p {
   margin: 0;
   padding: 10px 16px;
+}
+
+/* ========================= PROJECTS SECTION ========================= */
+.search-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 16px;
+  align-items: flex-end;
+}
+.search-container label {
+  display: block;
+}
+.search-container input,
+.search-container select {
+  width: 100%;
+  height: 40px;
 }

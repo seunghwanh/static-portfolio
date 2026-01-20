@@ -205,3 +205,9 @@ ul {
   align-items: start;
   margin-bottom: 8px;
 }
+
+/* ========================= FOOTER ========================= */
+footer {
+  margin-top: 48px;
+  margin-bottom: 120px;
+}

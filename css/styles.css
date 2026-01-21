@@ -7,6 +7,7 @@
   --text-color: #0f172a;
   --border-color: rgba(15, 23, 42, 0.12);
   --muted-color: #475569;
+  --dot-color: rgba(37, 36, 36, 0.18);
 }
 
 /* Universal styles */
@@ -100,7 +101,7 @@ ul {
   list-style: none;
   display: flex;
   gap: 8px;
-  margin: 12px 0;
+  margin-top: 12px;
 }
 .tag {
   font-size: 12px;
@@ -147,6 +148,14 @@ ul {
 }
 .card-footer .btn {
   font-size: 14px;
+}
+
+/* Miscellaneous */
+.small {
+  font-size: 13px;
+}
+.muted {
+  color: var(--muted-color);
 }
 
 /* ========================= HEADER SECTION ========================= */
@@ -265,28 +274,39 @@ ul {
   margin: 0;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 1);
-  display: inline-block;
-}
 .demo {
-  border: 1px solid #000000;
+  margin-top: 36px;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
   overflow: hidden;
 }
 .demo-header {
-  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 12px;
+}
+.demo-title {
+  margin-left: 6px;
+  font-size: 12px;
+  color: var(--muted-color);
 }
 .demo-video {
   width: 100%;
   aspect-ratio: 16 / 9;
+  display: block;
 }
-.demo p {
-  margin: 0;
-  padding: 10px 16px;
+.demo-footer {
+  margin: 8px 12px 10px 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dot-color);
+  display: inline-block;
 }
 
 /* ========================= PROJECTS SECTION ========================= */

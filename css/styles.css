@@ -35,7 +35,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   margin: 0;
   font-family:
     ui-sans-serif,

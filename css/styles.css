@@ -65,7 +65,7 @@ a {
 }
 
 section {
-  margin-top: 120px;
+  padding: 64px 0;
 }
 ul {
   padding: 0;
@@ -246,7 +246,7 @@ ul {
 
 /* ========================= HERO SECTION ========================= */
 .hero {
-  margin-top: 40px;
+  padding-top: 40px;
 }
 .hero-grid {
   display: grid;

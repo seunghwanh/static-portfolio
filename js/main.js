@@ -50,13 +50,15 @@ if (copyEmailBtn) {
 /* Toolbar search input */
 const projectGrid = document.querySelector("#project-grid");
 const searchInput = document.querySelector("#project-search");
+const tagFilter = document.querySelector("#tag-filter");
 
 function filterProjects() {
   if (!projectGrid) return;
   const query = searchInput.value.toLowerCase();
   const cards = Array.from(projectGrid.querySelectorAll(".card"));
   cards.forEach((card) => {
-    const text = card.textContent.toLowerCase();
+    const text = card.textContent.toLowerCase().trim();
+    const tags = card.dataset.tags.toLowerCase().trim();
     if (text.includes(query)) {
       card.style.display = "";
     } else {

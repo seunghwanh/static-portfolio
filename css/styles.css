@@ -231,7 +231,7 @@ ul {
 .hero-description {
   font-size: 16px;
   color: var(--muted-color);
-  max-width: 95%;
+  max-width: 62ch;
 }
 
 /* Metrics */
@@ -381,5 +381,16 @@ ul {
 /* ========================= FOOTER ========================= */
 footer {
   margin-top: 48px;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media only screen and (max-width: 980px) {
+  .hero-grid,
+  .metric-grid,
+  .toolbar,
+  .card-grid,
+  .card-grid.about {
+    grid-template-columns: 1fr;
+  }
 }

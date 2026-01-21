@@ -8,6 +8,7 @@
   --border-color: rgba(15, 23, 42, 0.12);
   --muted-color: #475569;
   --dot-color: rgba(37, 36, 36, 0.18);
+  --card-color: #ffffff;
 }
 
 /* Universal styles */
@@ -17,6 +18,9 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family:
@@ -49,6 +53,9 @@ h1 {
 h2 {
   font-size: clamp(22px, 3vw, 30px);
   letter-spacing: -0.02em;
+}
+h3 {
+  font-size: 18px;
 }
 
 a {
@@ -124,6 +131,7 @@ ul {
   margin-top: 16px;
 }
 .card {
+  background: var(--card-color);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -339,7 +347,7 @@ ul {
 
 /* ========================= ABOUT SECTION ========================= */
 .card-grid.about {
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.3fr 0.7fr;
   align-items: stretch;
 }
 .card-body ul.experience-list {

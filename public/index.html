@@ -6,8 +6,8 @@
     <meta name="description" content="Portfolio website for Maya Chen, Software Engineer." />
     <meta name="author" content="Maya Chen" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme.js"></script>
     <title>Maya Chen - Software Engineer</title>
-    <!-- <script src="../js/main.js" defer></script> -->
   </head>
   <body>
     <!-- Header -->
@@ -36,7 +36,7 @@
 
         <!-- Theme button -->
         <div class="header-action">
-          <button class="btn small ghost">Light</button>
+          <button id="theme-toggle" class="btn small ghost">Light</button>
         </div>
       </div>
     </header>
@@ -109,15 +109,15 @@
                 <span class="dot"></span>
                 <span class="demo-title">Product Demo</span>
               </div>
-              <iframe
-                src="https://www.youtube.com/embed/CKSBlLFdtlI"
+              <!-- src="https://www.youtube.com/embed/CKSBlLFdtlI" -->
+              <!-- <iframe
+                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
                 title="Demo Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
+                loading="lazy"
                 class="demo-video"
-              ></iframe>
+              ></iframe> -->
               <p class="muted small demo-footer">Sample embedded video for layout demonstration.</p>
             </div>
           </article>
@@ -311,5 +311,6 @@
         <p class="muted small">&copy; 2026 Maya Chen. Built with plain HTML, CSS, and a little JavaScript.</p>
       </div>
     </footer>
+    <script src="../js/main.js"></script>
   </body>
 </html>

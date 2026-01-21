@@ -23,6 +23,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  min-height: 100vh;
   margin: 0;
   font-family:
     ui-sans-serif,
@@ -474,7 +475,8 @@ footer {
   .metric-grid,
   .toolbar,
   .card-grid,
-  .card-grid.about {
+  .card-grid.about,
+  .card-grid.contact {
     grid-template-columns: 1fr;
   }
 

@@ -350,15 +350,32 @@ ul {
   grid-template-columns: 1.3fr 0.7fr;
   align-items: stretch;
 }
-.card-body ul.experience-list {
+.experiences {
+  list-style: none;
   padding-left: 0;
-}
-.experience {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 10px;
-  align-items: start;
-  margin-bottom: 8px;
+  gap: 12px;
+}
+.experiences li {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: first baseline;
+  gap: 12px;
+}
+.period {
+  color: var(--muted-color);
+  font-size: 12px;
+}
+.role {
+  color: var(--muted-color);
+}
+.role strong {
+  color: var(--text-color);
+}
+.about-actions {
+  display: flex;
+  gap: 12px;
+  margin-left: 16px;
 }
 
 /* ========================= FOOTER ========================= */

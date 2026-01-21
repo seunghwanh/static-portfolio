@@ -58,6 +58,10 @@ h2 {
 h3 {
   font-size: 18px;
 }
+h4 {
+  font-size: 14px;
+  margin: 16px 0;
+}
 
 a {
   text-decoration: none;
@@ -438,6 +442,30 @@ footer {
   display: flex;
   gap: 8px;
   margin-top: 16px;
+}
+.contact-item {
+  margin-bottom: 16px;
+}
+.contact-label {
+  font-size: 12px;
+  color: var(--muted-color);
+  margin: 4px 0;
+}
+.contact-email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact-info {
+  margin: 0;
+}
+.divider {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 16px 0;
+}
+.help-list {
+  padding-left: 18px;
 }
 
 /* ========================= RESPONSIVE ========================= */

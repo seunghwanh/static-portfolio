@@ -46,3 +46,25 @@ if (copyEmailBtn) {
       });
   });
 }
+
+/* Toolbar search input */
+const projectGrid = document.querySelector("#project-grid");
+const searchInput = document.querySelector("#project-search");
+
+function filterProjects() {
+  if (!projectGrid) return;
+  const query = searchInput.value.toLowerCase();
+  const cards = Array.from(projectGrid.querySelectorAll(".card"));
+  cards.forEach((card) => {
+    const text = card.textContent.toLowerCase();
+    if (text.includes(query)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", filterProjects);
+}

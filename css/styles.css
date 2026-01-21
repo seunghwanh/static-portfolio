@@ -99,12 +99,16 @@ ul {
 .tag-list {
   list-style: none;
   display: flex;
-  gap: 12px;
+  gap: 8px;
+  margin: 12px 0;
 }
 .tag {
-  border: 1px solid #000000;
-  border-radius: 24px;
-  padding: 8px;
+  font-size: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: var(--muted-color);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 /* Cards */
@@ -237,14 +241,30 @@ ul {
 }
 
 /* Media */
+.profile {
+  margin: 0;
+}
 .portrait {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
-.profile {
+.profile-caption {
+  margin: 0;
   padding: 0 16px;
 }
+.profile-caption h2 {
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  margin: 12px 0 4px 0;
+}
+.profile-caption p {
+  color: var(--muted-color);
+  font-size: 13px;
+  margin: 0;
+}
+
 .dot {
   width: 10px;
   height: 10px;

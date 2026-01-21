@@ -17,6 +17,7 @@ if (themeToggle) {
     const oldTheme = getCurrentTheme();
     const nextTheme = oldTheme === "light" ? "dark" : "light";
     localStorage.setItem("theme", nextTheme);
+    themeToggle.textContent = nextTheme === "light" ? "Light" : "Dark";
     updateTheme(nextTheme);
   });
 }

@@ -14,6 +14,17 @@ if (themeToggle) {
 /* Toggle navigation menu for small screens */
 const navToggle = document.querySelector("#nav-toggle");
 const navList = document.querySelector("#nav-list");
-navToggle.addEventListener("click", () => {
-  navList.classList.toggle("open");
-});
+if (navToggle && navList) {
+  navToggle.addEventListener("click", () => {
+    navList.classList.toggle("open");
+  });
+}
+
+/* Copy email to clipboard */
+const copyEmailBtn = document.querySelector("#copy-email");
+if (copyEmailBtn) {
+  copyEmailBtn.addEventListener("click", () => {
+    const address = copyEmailBtn.getAttribute("data-email");
+    navigator.clipboard.writeText(address);
+  });
+}

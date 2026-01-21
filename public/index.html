@@ -126,17 +126,17 @@
         <div class="content-wrapper">
           <div class="projects-header">
             <h2>Selected Projects</h2>
-            <p>A few projects that show how I design, implement, and ship.</p>
+            <p class="muted">A few projects that show how I design, implement, and ship.</p>
           </div>
 
-          <div class="search-container">
-            <div>
-              <label for="project-search">Search projects</label>
+          <div class="toolbar">
+            <label class="field">
+              <span class="field-label">Search</span>
               <input id="project-search" type="text" placeholder="e.g. dashboard, performance, a11y" />
-            </div>
+            </label>
 
-            <div>
-              <label for="tag-filter">Tag</label>
+            <label class="field">
+              <span class="field-label">Tag</span>
               <select id="tag-filter">
                 <option value="all">All</option>
                 <option value="frontend">FrontEnd</option>
@@ -144,8 +144,9 @@
                 <option value="accessibility">Accessibility</option>
                 <option value="data">Data</option>
               </select>
-            </div>
-            <button class="btn">Clear</button>
+            </label>
+
+            <button class="btn small">Clear</button>
           </div>
 
           <div class="card-grid">

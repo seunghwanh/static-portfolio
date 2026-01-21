@@ -39,5 +39,54 @@
         </div>
       </div>
     </header>
+
+    <main>
+      <section>
+        <div class="content-wrapper">
+          <h1>Contact</h1>
+          <p class="muted">If you want to talk about a role, a project, or a collaboration, send a note.</p>
+          <div class="card-grid contact">
+            <article class="card">
+              <div class="card-body">
+                <h3>Message</h3>
+                <form>
+                  <label class="field">
+                    <span class="field-label">Name</span>
+                    <input type="text" name="name" required />
+                    <p class="field-help">Please enter your name.</p>
+                  </label>
+                  <label class="field">
+                    <span class="field-label">Email</span>
+                    <input type="email" name="email" required />
+                    <p class="field-help">Please enter a valid email.</p>
+                  </label>
+                  <label class="field">
+                    <span class="field-label">Subject</span>
+                    <input type="text" name="subject" required />
+                    <p class="field-help">A short subject helps triage.</p>
+                  </label>
+                  <label class="field">
+                    <span class="field-label">Message</span>
+                    <textarea name="message" required rows="6"></textarea>
+                    <p class="field-help">Share context, timeline, and goals.</p>
+                  </label>
+
+                  <div class="form-actions">
+                    <input type="submit" value="Send" class="btn primary" />
+                    <button class="btn">Reset</button>
+                  </div>
+                </form>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-body">
+                <h3>Details</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

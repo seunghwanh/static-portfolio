@@ -131,27 +131,23 @@ ul {
 }
 .card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
 }
 .card-body {
-  padding: 0 16px;
+  padding: 16px;
 }
-.card-body ul {
-  padding-left: 16px;
-}
-.card-body li {
-  margin-bottom: 8px;
+.card-list {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--muted-color);
 }
 .card-footer {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   margin-left: 16px;
   margin-right: 16px;
   align-items: center;
   font-size: 12px;
-}
-.card-footer .btn {
-  font-size: 14px;
 }
 
 /* Miscellaneous */

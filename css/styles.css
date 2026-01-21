@@ -9,6 +9,7 @@
   --muted-color: #475569;
   --dot-color: rgba(37, 36, 36, 0.18);
   --card-color: #ffffff;
+  --shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
 }
 
 /* Universal styles */
@@ -134,7 +135,7 @@ ul {
   background: var(--card-color);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
   padding-bottom: 12px;
 }
 .card img {
@@ -180,7 +181,7 @@ ul {
   align-items: center;
   justify-content: space-between;
 }
-.site-nav ul {
+.nav-list {
   display: flex;
   list-style: none;
   gap: 30px;
@@ -204,6 +205,43 @@ ul {
 }
 .author {
   font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+/* Navigation */
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: transparent;
+  width: 42px;
+  height: 38px;
+  cursor: pointer;
+  margin: 12px 0;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--text-color);
+  position: relative;
+}
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  content: "";
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--text-color);
+  position: absolute;
+  left: 0;
+}
+.nav-toggle-bar::before {
+  top: -6px;
+}
+.nav-toggle-bar::after {
+  top: 6px;
 }
 
 /* ========================= HERO SECTION ========================= */
@@ -392,5 +430,23 @@ footer {
   .card-grid,
   .card-grid.about {
     grid-template-columns: 1fr;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 62px;
+    width: min(260px, calc(100% - 40px));
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow);
+    gap: 16px;
   }
 }

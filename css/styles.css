@@ -510,4 +510,10 @@ footer {
     box-shadow: var(--shadow);
     gap: 16px;
   }
+  .nav-list.open {
+    display: flex;
+  }
+  [data-theme="dark"] .nav-list {
+    background: rgba(10, 12, 18, 0.92);
+  }
 }

@@ -210,6 +210,22 @@ ul {
 .muted {
   color: var(--muted-color);
 }
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  border: 1px solid var(--border);
+  background: rgba(250, 251, 255, 0.85);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-width: min(520px, calc(100% - 24px));
+}
+[data-theme="dark"] .toast {
+  background: rgba(10, 12, 18, 0.85);
+}
 
 /* ========================= HEADER SECTION ========================= */
 .site-header {

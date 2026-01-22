@@ -51,22 +51,37 @@ if (copyEmailBtn) {
 const projectGrid = document.querySelector("#project-grid");
 const searchInput = document.querySelector("#project-search");
 const tagFilter = document.querySelector("#tag-filter");
+const toolbarClearBtn = document.querySelector("#toolbar-clear");
 
 function filterProjects() {
   if (!projectGrid) return;
+
+  // Get search query and selected tag
   const query = searchInput.value.toLowerCase();
+  const tag = tagFilter?.value || "all";
+
   const cards = Array.from(projectGrid.querySelectorAll(".card"));
+
   cards.forEach((card) => {
     const text = card.textContent.toLowerCase().trim();
     const tags = card.dataset.tags.toLowerCase().trim();
-    if (text.includes(query)) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
+    const hasQuery = !query || text.includes(query);
+    const hasTag = tag === "all" || tags.includes(tag);
+
+    card.style.display = hasQuery && hasTag ? "" : "none";
   });
 }
 
 if (searchInput) {
   searchInput.addEventListener("input", filterProjects);
+}
+if (tagFilter) {
+  tagFilter.addEventListener("change", filterProjects);
+}
+if (toolbarClearBtn) {
+  toolbarClearBtn.addEventListener("click", () => {
+    if (searchInput) searchInput.value = "";
+    if (tagFilter) tagFilter.value = "all";
+    filterProjects();
+  });
 }

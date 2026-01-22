@@ -17,15 +17,15 @@
       <div class="content-wrapper site-header-inner">
         <!-- Branding -->
         <a href="index.html" class="branding">
-          <div class="logo">
+          <div class="logo" aria-hidden="true">
             <span class="author">MC</span>
           </div>
           <span class="author">Maya Chen</span>
         </a>
 
         <!-- Navigation -->
-        <nav class="site-nav">
-          <button id="nav-toggle" class="nav-toggle" type="button">
+        <nav class="site-nav" aria-label="Main navigation">
+          <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">
             <div class="nav-toggle-bar"></div>
           </button>
           <ul id="nav-list" class="nav-list">
@@ -55,31 +55,31 @@
                 <form id="contact-form" novalidate>
                   <label class="field">
                     <span class="field-label">Name</span>
-                    <input type="text" id="name" name="name" required />
+                    <input type="text" id="name" name="name" aria-describedby="name-help" required />
                     <p id="name-help" class="field-help">Please enter your name.</p>
                   </label>
                   <label class="field">
                     <span class="field-label">Email</span>
-                    <input type="email" id="email" name="email" required />
-                    <p id='email-help' class="field-help">Please enter a valid email.</p>
+                    <input type="email" id="email" name="email" aria-describedby="email-help" required />
+                    <p id="email-help" class="field-help">Please enter a valid email.</p>
                   </label>
                   <label class="field">
                     <span class="field-label">Subject</span>
-                    <input type="text" id="subject" name="subject" required />
+                    <input type="text" id="subject" name="subject" aria-describedby="subject-help" required />
                     <p id="subject-help" class="field-help">A short subject helps triage.</p>
                   </label>
                   <label class="field">
                     <span class="field-label">Message</span>
-                    <textarea name="message" id="message" required rows="6"></textarea>
+                    <textarea name="message" id="message" required rows="6" aria-describedby="message-help"></textarea>
                     <p id="message-help" class="field-help">Share context, timeline, and goals.</p>
                   </label>
 
                   <div class="form-actions">
                     <input id="'submit" type="submit" value="Send" class="btn primary" />
-                    <input type="reset" class="btn"></input>
+                    <input type="reset" class="btn" />
                   </div>
                 </form>
-                <div id="form-result" class="form-result muted">Please fix the highlighted fields and try again.</div>
+                <div id="form-result" class="form-result muted" role="alert">Please fix the highlighted fields and try again.</div>
               </div>
             </article>
 
@@ -121,6 +121,6 @@
       </div>
     </footer>
 
-    <div id="toast" class="toast" hidden></div>
+    <div id="toast" class="toast" hidden aria-live="polite"></div>
   </body>
 </html>

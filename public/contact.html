@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/theme.js"></script>
     <script src="../js/common.js" defer></script>
+    <script src="../js/contact.js" defer></script>
     <title>Contact - Maya Chen</title>
   </head>
   <body>
@@ -51,31 +52,31 @@
             <article class="card">
               <div class="card-body">
                 <h3>Message</h3>
-                <form>
+                <form id="contact-form" novalidate>
                   <label class="field">
                     <span class="field-label">Name</span>
-                    <input type="text" name="name" required />
-                    <p class="field-help">Please enter your name.</p>
+                    <input type="text" id="name" name="name" required />
+                    <p id="name-help" class="field-help">Please enter your name.</p>
                   </label>
                   <label class="field">
                     <span class="field-label">Email</span>
-                    <input type="email" name="email" required />
-                    <p class="field-help">Please enter a valid email.</p>
+                    <input type="email" id="email" name="email" required />
+                    <p id='email-help' class="field-help">Please enter a valid email.</p>
                   </label>
                   <label class="field">
                     <span class="field-label">Subject</span>
-                    <input type="text" name="subject" required />
-                    <p class="field-help">A short subject helps triage.</p>
+                    <input type="text" id="subject" name="subject" required />
+                    <p id="subject-help" class="field-help">A short subject helps triage.</p>
                   </label>
                   <label class="field">
                     <span class="field-label">Message</span>
-                    <textarea name="message" required rows="6"></textarea>
-                    <p class="field-help">Share context, timeline, and goals.</p>
+                    <textarea name="message" id="message" required rows="6"></textarea>
+                    <p id="message-help" class="field-help">Share context, timeline, and goals.</p>
                   </label>
 
                   <div class="form-actions">
-                    <input type="submit" value="Send" class="btn primary" />
-                    <button class="btn">Reset</button>
+                    <input id="'submit" type="submit" value="Send" class="btn primary" />
+                    <input type="reset" class="btn"></input>
                   </div>
                 </form>
               </div>

@@ -1,37 +1,84 @@
 const inputIds = ["name", "email", "subject", "message"];
-const contactForm = document.querySelector("#contact-form");
+const contactForm = document.getElementById("contact-form");
+const formResult = document.getElementById("form-result");
 
-const nameRegex = /^[a-zA-Z ]+$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const subjectRegex = /^[a-zA-Z]+[a-zA-Z0-9 ]{2,}$/;
-const messageRegex = /^.{10,}$/;
+const formInputValidations = {
+  name: {
+    input: document.getElementById("name"),
+    helpText: document.getElementById("name-help"),
+    regex: /^[a-zA-Z ]+$/,
+    warning: "Name is required",
+    defaultText: "",
+  },
+  email: {
+    input: document.getElementById("email"),
+    helpText: document.getElementById("email-help"),
+    regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    warning: "Please provide a valid email address",
+    defaultText: "",
+  },
+  subject: {
+    input: document.getElementById("subject"),
+    helpText: document.getElementById("subject-help"),
+    regex: /^[a-zA-Z]+[a-zA-Z0-9 ]{2,}$/,
+    warning: "Subject must be at least 3 characters long and start with a letter",
+    defaultText: "",
+  },
+  message: {
+    input: document.getElementById("message"),
+    helpText: document.getElementById("message-help"),
+    regex: /^.{10,}$/,
+    warning: "Message must be at least 10 characters long",
+    defaultText: "",
+  },
+};
+
+// Store default help texts
+for (const key in formInputValidations) {
+  const field = formInputValidations[key];
+  if (field.input && field.helpText) {
+    field.defaultText = field.helpText.textContent;
+  }
+}
+
+// Restore default help texts when new input is generated
+for (const key in formInputValidations) {
+  const field = formInputValidations[key];
+  if (field.input && field.helpText) {
+    field.input.addEventListener("input", () => {
+      field.helpText.textContent = field.defaultText;
+    });
+  }
+}
 
 function validateInputs() {
-  inputIds.forEach((id) => {
-    const input = document.getElementById(id);
-    const helpText = document.getElementById(`${id}-help`);
-    if (!input || !helpText) return;
-
-    const value = input.value.trim();
-
-    if (id === "name") {
-      if (!nameRegex.test(value)) {
-        helpText.textContent = "Name is required";
-      }
-    } else if (id === "email") {
-      if (!emailRegex.test(value)) {
-        helpText.textContent = "Please provide a valid email address";
-      }
-    } else if (id === "subject") {
-      if (!subjectRegex.test(value)) {
-        helpText.textContent = "Subject must be at least 3 characters long and start with a letter";
-      }
-    } else if (id === "message") {
-      if (!messageRegex.test(value)) {
-        helpText.textContent = "Message must be at least 10 characters long";
-      }
+  let failed = false;
+  for (const key in formInputValidations) {
+    const field = formInputValidations[key];
+    if (!field.input || !field.helpText) {
+      failed = true;
+      continue;
     }
-  });
+
+    const value = field.input.value.trim();
+    if (!field.regex.test(value)) {
+      field.helpText.textContent = field.warning;
+      failed = true;
+    }
+  }
+
+  formResult.style.visibility = failed ? "visible" : "hidden";
+  if (!failed) {
+    const email = "maya.chen.dev@example.com";
+    const subject = encodeURIComponent(document.getElementById("subject").value.trim());
+    const body = encodeURIComponent(
+      `Name: ${document.getElementById("name").value.trim()}\n\n` +
+        `Email: ${document.getElementById("email").value.trim()}\n\n` +
+        `Message:\n${document.getElementById("message").value.trim()}`,
+    );
+    const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+  }
 }
 
 if (contactForm) {
@@ -40,19 +87,3 @@ if (contactForm) {
     validateInputs();
   });
 }
-
-// Restore default help texts when new input is generated
-const defaultHelpTexts = {};
-inputIds.forEach((id) => {
-  const helpElem = document.getElementById(`${id}-help`);
-  defaultHelpTexts[id] = helpElem ? helpElem.textContent : "";
-});
-
-inputIds.forEach((id) => {
-  const input = document.getElementById(id);
-  const helpText = document.getElementById(`${id}-help`);
-  if (!input || !helpText) return;
-  input.addEventListener("input", () => {
-    helpText.textContent = defaultHelpTexts[id];
-  });
-});

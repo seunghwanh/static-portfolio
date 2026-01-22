@@ -504,6 +504,13 @@ footer {
 .help-list {
   padding-left: 18px;
 }
+.form-result {
+  visibility: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: 12px;
+}
 
 /* ========================= RESPONSIVE ========================= */
 @media only screen and (max-width: 980px) {

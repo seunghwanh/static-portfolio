@@ -2,14 +2,14 @@ const root = document.documentElement;
 const themeToggle = document.querySelector("#theme-toggle");
 const toast = document.querySelector("#toast");
 
-const activateToast = (msg) => {
+function activateToast(msg) {
   if (!toast) return;
   toast.textContent = msg;
   toast.hidden = false;
   setTimeout(() => {
     toast.hidden = true;
   }, 2000);
-};
+}
 
 /* Switch themes */
 if (themeToggle) {
@@ -52,6 +52,7 @@ const projectGrid = document.querySelector("#project-grid");
 const searchInput = document.querySelector("#project-search");
 const tagFilter = document.querySelector("#tag-filter");
 const toolbarClearBtn = document.querySelector("#toolbar-clear");
+const emptyProjectWarn = document.querySelector("#empty-project-warn");
 
 function filterProjects() {
   if (!projectGrid) return;
@@ -61,17 +62,26 @@ function filterProjects() {
   const tag = tagFilter?.value || "all";
 
   const cards = Array.from(projectGrid.querySelectorAll(".card"));
+  let visibleCount = 0;
 
   cards.forEach((card) => {
     const text = card.textContent.toLowerCase().trim();
     const tags = card.dataset.tags.toLowerCase().trim();
+
     const hasQuery = !query || text.includes(query);
     const hasTag = tag === "all" || tags.includes(tag);
+    const needShow = hasQuery && hasTag;
 
-    card.style.display = hasQuery && hasTag ? "" : "none";
+    card.style.display = needShow ? "" : "none";
+    if (needShow) visibleCount++;
   });
+
+  if (emptyProjectWarn) {
+    emptyProjectWarn.style.display = visibleCount === 0 ? "block" : "none";
+  }
 }
 
+// Event listeners for filtering
 if (searchInput) {
   searchInput.addEventListener("input", filterProjects);
 }

@@ -424,6 +424,13 @@ ul {
   align-items: end;
   margin: 18px 0 16px;
 }
+#empty-project-warn {
+  display: none;
+  color: var(--muted-color);
+  border: 1px dashed var(--border-color);
+  border-radius: 18px;
+  padding: 16px;
+}
 
 /* ========================= ABOUT SECTION ========================= */
 .card-grid.about {
